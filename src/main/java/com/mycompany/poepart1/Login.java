@@ -17,4 +17,15 @@ public class Login {
         String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]).{8,}$";
         return password.matches(regex);
     }
+    
+    public String registerUser(String username, String password, String cellPhoneNumber, String firstName, String lastName) {
+        if (!checkUsername(username)) {
+            return "Username is not correct formatted; please ensure that your username contains an underscore and is more than five characters long.";
+        }
+        if (!checkCellPhoneNumber(cellPhoneNumber)) {
+            return "Cell number is incorrectly formatted or does not contain the international code, please corrct the number and try again.";
+        }
+        if (!checkPasswordComplexity(password)) {
+            return "Password is not correctly formatted, please ensure the password contains at least 8 digit characters, a numberand a special character.";            
+        }
 }
