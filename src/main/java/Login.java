@@ -28,4 +28,24 @@ public class Login {
         if (!checkPasswordComplexity(password)) {
             return "Password is not correctly formatted, please ensure the password contains at least 8 digit characters, a numberand a special character.";            
         }
+        
+        this.storedUsername = username;
+        this.storedPassword = password;
+        this.firstName = firstName;
+        this.lastName = lastName; //"this' will store all the user details once every check has been validated//
+        
+        return "Wlcome " + firstName + ", " + lastName + "it is great to see you.";
+    }
+    
+    public boolean loginUser(String username, String password) {
+        return username.equals(this.storedUsername) && password.equals(this.storedPassword);
+    }
+    
+    public String returnLoginStatus(boolean isLoggedIn) {
+        if (isLoggedIn) {
+            return "Welcome " + firstName + ", " + lastName + "It is great to see you.";
+        } else {
+            return "Username or password is incorrect, please try again.";
+        }
+    }
 }
