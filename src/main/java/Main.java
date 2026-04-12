@@ -26,6 +26,26 @@ public class Main {
         System.out.println("\n" + registrationResult);
         
         
+        //if successfull proceed//
+        if (registrationResult.equals("User successfully registered!")) {
+            System.out.println("\n LOGIN");
+            
+            System.out.print("Enter Username: ");
+            String loginUser = scanner.nextLine();
+            
+            System.out.print("Enter Password: ");
+            String loginPass = scanner.nextLine();
+
+            // Attempt Login
+            boolean isLoggedIn = userLogin.loginUser(loginUser, loginPass);
+            String loginMessage = userLogin.returnLoginStatus(isLoggedIn);
+            
+            System.out.println("\n" + loginMessage);
+        }
+        
+        scanner.close();
+    }}
+        
 
 
         
