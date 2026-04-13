@@ -21,8 +21,12 @@ public class Main {
         
         System.out.print("Enter an SA NO include the international code +27: ");
         String cell = scanner.nextLine();
+        if (cell.startsWith("0") && cell.length() == 10) {
+            cell = "+27" + cell.substring(1);
+        }
+ 
         
-        String registrationResult = userLogin.registerUser(user, pass, fName, lName, cell);
+        String registrationResult = userLogin.registerUser(user, pass, cell, fName, lName);
         System.out.println("\n" + registrationResult);
         
         

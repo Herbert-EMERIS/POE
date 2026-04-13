@@ -34,7 +34,7 @@ public class Login {
         this.firstName = firstName;
         this.lastName = lastName; //"this' will store all the user details once every check has been validated//
         
-        return "Wlcome " + firstName + ", " + lastName + "it is great to see you.";
+        return "Wlcome " + firstName + ", " + lastName + " it is great to see you.";
     }
     
     public boolean loginUser(String username, String password) {
