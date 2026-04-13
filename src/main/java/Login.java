@@ -9,7 +9,7 @@ public class Login {
     }
     
     public boolean checkCellPhoneNumber(String phoneNumber) {
-        return phoneNumber.startsWith("+") && phoneNumber.substring(1).length() <= 10;
+        return phoneNumber.length() == 12 && phoneNumber.startsWith("+27");
     }
     
     public boolean checkPasswordComplexity(String password) {

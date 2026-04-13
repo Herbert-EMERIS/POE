@@ -50,21 +50,21 @@ public class LoginTest {
 
     @Test
     public void testUsernameIncorrectlyFormattedMessage() {
-        String expected = "Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.";
+        String expected = "Username is not correct formatted; please ensure that your username contains an underscore and is more than five characters long.";
         String actual = login.registerUser("kyle!!!!!!!", "Ch&&sec@ke99!", "+27838968976", "Kyle", "Smith");
         assertEquals(expected, actual);
     }
 
     @Test
     public void testPasswordIncorrectlyFormattedMessage() {
-        String expected = "Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number, and a special character.";
+        String expected = "Password is not correctly formatted, please ensure the password contains at least 8 digit characters, a numberand a special character.";
         String actual = login.registerUser("kyl_1", "password", "+27838968976", "Kyle", "Smith");
         assertEquals(expected, actual);
     }
 
     @Test
     public void testCellPhoneNumberIncorrectlyFormattedMessage() {
-        String expected = "Cell number is incorrectly formatted or does not contain an international code; please correct the number and try again.";
+        String expected = "Cell number is incorrectly formatted or does not contain the international code, please corrct the number and try again.";
         String actual = login.registerUser("kyl_1", "Ch&&sec@ke99!", "08966553", "Kyle", "Smith");
         assertEquals(expected, actual);
     }
