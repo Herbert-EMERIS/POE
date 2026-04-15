@@ -27,7 +27,7 @@ public class Login {
         }
         if (!checkPasswordComplexity(password)) {
             return "Password is not correctly formatted, please ensure the password contains at least 8 digit characters, a numberand a special character.";            
-        }
+        } 
         
         this.storedUsername = username;
         this.storedPassword = password;
